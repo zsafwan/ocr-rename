@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ocr-rename"
+version = "0.1.0"
+description = "Rename scanned PDF books using Claude Vision"
+requires-python = ">=3.10"
+dependencies = [
+    "anthropic>=0.42.0",
+    "pymupdf>=1.25.0",
+    "tqdm>=4.66.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.scripts]
+ocr-rename = "ocr_rename.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
